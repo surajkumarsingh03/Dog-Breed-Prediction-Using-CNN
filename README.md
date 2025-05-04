@@ -32,3 +32,7 @@ NumPy / Pandas – Data manipulation and processing (optional depending on your 
 🚀 Running the Application
 To run the Flask server locally, use the following command:  python app.py
 
+### 📃 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
