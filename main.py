@@ -74,16 +74,16 @@ app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
 
 @app.route('/')
 def upload():
-    return render_template("file_upload_form.html")
+    return render_template("index.html")
 
-@app.route('/success', methods=['POST'])
-def success():
+@app.route('/output', methods=['POST'])
+def output():
     if request.method == 'POST':
         f = request.files['file']
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], f.filename)
         f.save(file_path)
         result_text = predict_image(file_path)
-        return render_template("success.html", name='Results after Detecting Dog Breed in Input Image',
+        return render_template("output.html", name='Results after Detecting Dog Breed in Input Image',
                                img=file_path, out_1=result_text)
 
 @app.route('/info', methods=['POST'])
